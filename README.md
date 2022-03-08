@@ -23,5 +23,5 @@ Java 中常见的部分
 
 Android 中常见的部分
 
-#### Java 基础
+#### Android 基础部分
 - [使用 ViewPager 需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/1)
