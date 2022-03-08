@@ -7,12 +7,15 @@
 
 Java 中常见的部分
 
-#### Java 基础
+#### Java 基础部分
 
 - [Java String 可以有多长](https://github.com/LvKang-insist/Android-day-issues/issues/1)
 - [Java 中匿名内部类的限制](https://github.com/LvKang-insist/Android-day-issues/issues/2)
 - [Java 方法分派](https://github.com/LvKang-insist/Android-day-issues/issues/3)
 - [Java 泛型实现机制](https://github.com/LvKang-insist/Android-day-issues/issues/4)
+
+#### Java 线程部分
+- [如何停止一个线程](https://github.com/LvKang-insist/Android-day-issues/issues/6)
 
 ---
 
