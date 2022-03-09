@@ -179,10 +179,6 @@
 
       3. 使用完成后及时移除对象
 
-    
-
-  - 共享不可变资源
-
   - 共享可变资源
 
     - 可见性
@@ -194,7 +190,7 @@
       3. 加锁，锁释放的时候会强制将缓存刷入到主内存。
 
     - 操作原子性
-
+  
       对资源操作的时候如果不确保原子性，可能在操作资源的时候其实值已经被修改了。
 
       1. 加锁，保证操作的互斥性
@@ -202,7 +198,7 @@
       3. 使用原子数值类型如 (AtomicInteger)
 
     - 禁止重排序
-
+  
       cup 在执行的时候不是一行一行执行的，而是可能执行好几行，执行完后会将结果放入到缓存中，等到需要的时候在拿出来。如果在此期间资源被修改的话，就会造成之前计算的结果不准确，所以需要禁止重排序。
 
       禁止重排序可以通过，final 或者 volatile 来声明。
@@ -225,9 +221,9 @@
           }
       }
       ```
-
+  
       如果没有使用 volatile ，在调用 getInstance 中的第 2 处，将对象赋值给了 single。此时第二个线程来了，在第一处判断已经不为空了，所以直接拿去使用了。但是有可能会出现的问题就是虽然对象已经不为空了，但是该对象可能还没有初始化完成，所以就有可能出现问题。
-
+  
       
 
 ### ConcurrentHashMap 如何支持并发访问
@@ -324,3 +320,142 @@
 - 粗话高频锁：尽可能合并处理频繁过短的锁
 - 消除无用锁：可能能不加锁，或使用 volatile 代替锁
 
+### AtomicReference 和 AtomicReferenceFidldUpdater 有何异同
+
+- AtomicReference
+
+  在包装原子性的情况下来操作一个对象，使用如下：
+
+  ```java
+  class Test {
+      AtomicReference<String> atomicValue = new AtomicReference<>("HelloAtomic");
+  
+      @RequiresApi(api = Build.VERSION_CODES.N)
+      public static void main(String[] args) {
+          Test test = new Test();
+          //如果和预期值相同，则以原子的方式进行更新
+          test.atomicValue.compareAndSet("HelloAtomic","Hello World");
+          //以原子的方式更新，返回值是被替换的值
+          String value = test.atomicValue.getAndUpdate(new UnaryOperator<String>() {
+              @Override
+              public String apply(String s) {
+                  return "Hello 345";
+              }
+          });
+      }
+  }
+  ```
+
+- AtomicReferenceFieldUpdater
+
+  ```java
+  class Test {
+  
+      public static final AtomicReferenceFieldUpdater<Test, String> valueUpdater
+              = AtomicReferenceFieldUpdater.newUpdater(Test.class, String.class, "value");
+  
+      volatile String value = "hello";
+  
+      @RequiresApi(api = Build.VERSION_CODES.N)
+      public static void main(String[] args) {
+          Test test = new Test();
+          valueUpdater.compareAndSet(test, "HelloAtomic", "Hello World");
+          String value = valueUpdater.getAndUpdate(test, new UnaryOperator<String>() {
+              @Override
+              public String apply(String s) {
+                  return "Hello 345";
+              }
+          });
+          System.out.println(value + "---" + test.value);
+      }
+  }
+  ```
+
+  可以看到 AtomicReferenceFieldUpdater 使用的是反射来进行修改的。
+
+- 对比
+
+  可以看到，AtomicReference 比  AtomicReferenceFieldUpdater 使用起来更简单，但是大多数人还是会用 AtomicReferenceFieldUpdater ，这是为什么呢？
+
+  因为 AtomicReference 内部也会声明一个 `private volatile V value` 属性，这两者的主要差异在于  AtomicReference 也是指向了一个对象的，相当于比 AtomicReferenceFieldUpdater 要多创建出来一个对象。这个对象的头占到了 12 个字节，成员占到了四个字节，也就是多出来 16 个字节。
+
+  ![image-20220309152838927](https://cdn.jsdelivr.net/gh/LvKang-insist/PicGo/202203091528994.png)
+
+  如果单独使用可能没啥问题，可是如果大量的使用 AtomicReference 就会占用大量的内存，得不偿失。所以尽量还是用 AtomicReferenceFieldUpdater 为好。
+
+- 例子
+
+  - BufferedInputStream 内部使用了 AtomicReferenceFieldUpdater 
+
+  - kotlin 的 by lazy。
+
+    默认情况下，by lazy 是加锁的，同时只有一个线程可以访问
+
+    ```kotlin
+    public actual fun <T> lazy(initializer: () -> T): Lazy<T> = SynchronizedLazyImpl(initializer)
+    ```
+
+  - 如果不存在线程安全问的时候，我们可以使用非线程安全的模式，来避免加锁：
+
+    ```kotlin
+    val value by lazy (LazyThreadSafetyMode.NONE) {  }
+    ```
+
+  - 还有最后一种是 PUBLICATION
+
+    ```kotlin
+    val value by lazy (LazyThreadSafetyMode.PUBLICATION) {  }
+    ```
+
+    这种情况下可以多次初始化 lazy，但是之后第一次初始化的值会作为 lazy 的实例。
+
+    ```kotlin
+    private class SafePublicationLazyImpl<out T>(initializer: () -> T) : Lazy<T>, Serializable {
+        @Volatile private var initializer: (() -> T)? = initializer
+        @Volatile private var _value: Any? = UNINITIALIZED_VALUE
+        // this final field is required to enable safe initialization of the constructed instance
+        private val final: Any = UNINITIALIZED_VALUE
+    
+        override val value: T
+        val value = _value
+    ///..........
+                if (initializerValue != null) {
+                    val newValue = initializerValue()
+                    if (valueUpdater.compareAndSet(this, UNINITIALIZED_VALUE, newValue)) {
+    
+                    }
+                }
+                @Suppress("UNCHECKED_CAST")
+                return _value as T
+            }
+        companion object {
+            private val valueUpdater = java.util.concurrent.atomic.AtomicReferenceFieldUpdater.newUpdater(
+                SafePublicationLazyImpl::class.java,
+                Any::class.java,
+                "_value"
+            )
+        }
+    }
+    ```
+
+    可以看到他的内部也是使用了 AtomicReferenceFieldUpdater。
+
+### 如何在 Android 中写出优雅的异步代码
+
+- 什么是异步
+
+  异步和同步主要是看代码是不是按顺序执行的，例如 setOnclickListener 也是异步的，虽然是在同一个线程里面。但是只有点击的时候才会触发。
+
+  异步的目的就是为了 提高CPU 利用率 和 提升 UI 的响应速度。但是异步不一定块。
+
+  但是使用异步的时候会经常遇到嵌套地狱的问题，这种情况就会造成代码可读性非常差，容易出现问题。
+
+- 如何解决嵌套地狱
+
+  1. 手动将嵌套的代码挪出来，避免嵌套层级过深。也可以使用 Lambad 表达式，简化代码
+
+  2. 可以使用第三方框架，如 RxJava 等。
+
+  3. 使用 kotlin 协程
+
+     kotlin 协程可以做到以同步的方式去执行异步代码，使用起来几乎和同步代码没有太大的差别。
