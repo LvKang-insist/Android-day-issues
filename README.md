@@ -17,6 +17,7 @@ Java 中常见的部分
 #### Java 线程部分
 - [如何停止一个线程](https://github.com/LvKang-insist/Android-day-issues/issues/6)
 - [如何写出线程安全的程序](https://github.com/LvKang-insist/Android-day-issues/issues/7)
+- [ConCurrentHashMap 如何支持并发访问](https://github.com/LvKang-insist/Android-day-issues/issues/8)
 
 ---
 
@@ -25,4 +26,4 @@ Java 中常见的部分
 Android 中常见的部分
 
 #### Android 基础部分
-- [使用 ViewPager 需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/1)
+- [使用 ViewPager 需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/5)
