@@ -18,6 +18,7 @@ Java 中常见的部分
 - [如何停止一个线程](https://github.com/LvKang-insist/Android-day-issues/issues/6)
 - [如何写出线程安全的程序](https://github.com/LvKang-insist/Android-day-issues/issues/7)
 - [ConCurrentHashMap 如何支持并发访问](https://github.com/LvKang-insist/Android-day-issues/issues/8)
+- [AtomicReference 和 AtomicReferenceFidldUpdater 有何异同](https://github.com/LvKang-insist/Android-day-issues/issues/9)
 
 ---
 
