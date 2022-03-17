@@ -27,6 +27,7 @@ Java 中常见的部分
 Android 中常见的部分
 
 #### Android 基础部分
+- [Android 中为什么非 UI 线程不能更新 UI ](https://github.com/LvKang-insist/Android-day-issues/issues/12)
 - [使用 ViewPager 需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/5)
 - [如何在 Android 中写出优雅的异步代码](https://github.com/LvKang-insist/Android-day-issues/issues/10)
 - [CPU 架构适配需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/11)
