@@ -31,3 +31,4 @@ Android 中常见的部分
 - [使用 ViewPager 需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/5)
 - [如何在 Android 中写出优雅的异步代码](https://github.com/LvKang-insist/Android-day-issues/issues/10)
 - [CPU 架构适配需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/11)
+- [Handler 发送消息的 delay 可靠吗](https://github.com/LvKang-insist/Android-day-issues/issues/13)
