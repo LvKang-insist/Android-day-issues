@@ -34,3 +34,4 @@ Android 中常见的部分
 - [CPU 架构适配需要注意哪些问题](https://github.com/LvKang-insist/Android-day-issues/issues/11)
 - [Handler 发送消息的 delay 可靠吗](https://github.com/LvKang-insist/Android-day-issues/issues/13)
 - [Window 和 WindowManager](https://github.com/LvKang-insist/Android-day-issues/issues/15)
+- [理解 ViewRootImp](https://github.com/LvKang-insist/Android-day-issues/issues/16)
