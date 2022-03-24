@@ -35,3 +35,7 @@ Android 中常见的部分
 - [Handler 发送消息的 delay 可靠吗](https://github.com/LvKang-insist/Android-day-issues/issues/13)
 - [Window 和 WindowManager](https://github.com/LvKang-insist/Android-day-issues/issues/15)
 - [理解 ViewRootImp](https://github.com/LvKang-insist/Android-day-issues/issues/16)
+
+
+#### Android 优化部分
+- [如何避免 00M 的产生](https://github.com/LvKang-insist/Android-day-issues/issues/17)
