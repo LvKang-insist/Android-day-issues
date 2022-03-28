@@ -39,3 +39,4 @@ Android 中常见的部分
 
 #### Android 优化部分
 - [如何避免 00M 的产生](https://github.com/LvKang-insist/Android-day-issues/issues/17)
+- [如何对图片进行缓存](https://github.com/LvKang-insist/Android-day-issues/issues/18)
