@@ -28,11 +28,11 @@ Java 中常见的部分
 Android 中常见的部分
 
 ### Android 基础组件部分
-- [Activity 生命周期]()
-- [Activity 启动模式]()
-- [Fragment 基础]()
-- [Service 启动流程]()
-- [请介绍一下 Android 中的广播]()
+- [Activity 生命周期](https://github.com/LvKang-insist/Android-day-issues/issues/23)
+- [Activity 启动模式](https://github.com/LvKang-insist/Android-day-issues/issues/24)
+- [Fragment 基础](https://github.com/LvKang-insist/Android-day-issues/issues/25)
+- [Service 启动流程](https://github.com/LvKang-insist/Android-day-issues/issues/26)
+- [请介绍一下 Android 中的广播](https://github.com/LvKang-insist/Android-day-issues/issues/27)
 
 #### Android 基础部分
 - [Android 中为什么非 UI 线程不能更新 UI ](https://github.com/LvKang-insist/Android-day-issues/issues/12)
