@@ -59,4 +59,4 @@ Android 中常见的部分
 
 
 #### Kotlin 基础部分
-- [MVC，MVP，MVVM，MVI 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
+- [Kotlin 和 Java 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
