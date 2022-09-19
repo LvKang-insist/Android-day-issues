@@ -14,6 +14,7 @@ Java 中常见的部分
 - [Java 方法分派](https://github.com/LvKang-insist/Android-day-issues/issues/3)
 - [Java 泛型实现机制](https://github.com/LvKang-insist/Android-day-issues/issues/4)
 - [Java 接口和抽象类的区别](https://github.com/LvKang-insist/Android-day-issues/issues/14)
+- [面对对象的三大特征]
 
 #### Java 线程部分
 - [如何停止一个线程](https://github.com/LvKang-insist/Android-day-issues/issues/6)
@@ -44,8 +45,18 @@ Android 中常见的部分
 - [理解 ViewRootImp](https://github.com/LvKang-insist/Android-day-issues/issues/16)
 - [Android P 对访问私有 API 的限制 ](https://github.com/LvKang-insist/Android-day-issues/issues/20)
 
+### Android 架构部分
+- [MVC，MVP，MVVM，MVI 的区别]
 
 #### Android 优化部分
 - [如何避免 00M 的产生](https://github.com/LvKang-insist/Android-day-issues/issues/17)
 - [如何对图片进行缓存](https://github.com/LvKang-insist/Android-day-issues/issues/18)
 - [如何开展优化工作](https://github.com/LvKang-insist/Android-day-issues/issues/22)
+
+
+
+### Kotlin 部分
+
+
+#### Kotlin 基础部分
+- [MVC，MVP，MVVM，MVI 的区别]
