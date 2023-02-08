@@ -15,6 +15,7 @@ Java 中常见的部分
 - [Java 泛型实现机制](https://github.com/LvKang-insist/Android-day-issues/issues/4)
 - [Java 接口和抽象类的区别](https://github.com/LvKang-insist/Android-day-issues/issues/14)
 - [面对对象的三大特征](https://github.com/LvKang-insist/Android-day-issues/issues/28)
+- [Java 的四大引用](https://github.com/LvKang-insist/Android-day-issues/issues/32)
 
 #### Java 线程部分
 - [如何停止一个线程](https://github.com/LvKang-insist/Android-day-issues/issues/6)
@@ -47,6 +48,9 @@ Android 中常见的部分
 
 ### Android 架构部分
 - [MVC，MVP，MVVM，MVI 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/30)
+
+### Android 三方库部分
+- [LeakCanary 原理](https://github.com/LvKang-insist/Android-day-issues/issues/31)
 
 #### Android 优化部分
 - [如何避免 00M 的产生](https://github.com/LvKang-insist/Android-day-issues/issues/17)
