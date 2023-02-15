@@ -75,4 +75,4 @@ Android 中常见的部分
 - [密封类和 data 类](https://github.com/LvKang-insist/Android-day-issues/issues/40)
 
 
-- [Kotlin 和 Java 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
+
