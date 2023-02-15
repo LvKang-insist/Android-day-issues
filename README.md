@@ -71,3 +71,8 @@ Android 中常见的部分
 
 #### Kotlin 基础部分
 - [Kotlin 和 Java 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
+- [reified 关键字](https://github.com/LvKang-insist/Android-day-issues/issues/39)
+- [密封类和 data 类](https://github.com/LvKang-insist/Android-day-issues/issues/40)
+
+
+- [Kotlin 和 Java 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
