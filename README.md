@@ -49,7 +49,8 @@ Android 中常见的部分
 - [Window 和 WindowManager](https://github.com/LvKang-insist/Android-day-issues/issues/15)
 - [理解 ViewRootImp](https://github.com/LvKang-insist/Android-day-issues/issues/16)
 - [Android P 对访问私有 API 的限制 ](https://github.com/LvKang-insist/Android-day-issues/issues/20)
-
+- [RecyclerView 和 ListView 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/43)
+  
 ### Android 架构部分
 - [MVC，MVP，MVVM，MVI 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/30)
 
@@ -73,6 +74,6 @@ Android 中常见的部分
 - [Kotlin 和 Java 的区别](https://github.com/LvKang-insist/Android-day-issues/issues/29)
 - [reified 关键字](https://github.com/LvKang-insist/Android-day-issues/issues/39)
 - [密封类和 data 类](https://github.com/LvKang-insist/Android-day-issues/issues/40)
-
-
+- [Kotlin 中常见的函数](https://github.com/LvKang-insist/Android-day-issues/issues/41)
+- [协程的作用域，启动方式以及返回值有什么不同](https://github.com/LvKang-insist/Android-day-issues/issues/42)
 
