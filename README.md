@@ -64,9 +64,10 @@ Android 中常见的部分
 - [如何避免 00M 的产生](https://github.com/LvKang-insist/Android-day-issues/issues/17)
 - [如何对图片进行缓存](https://github.com/LvKang-insist/Android-day-issues/issues/18)
 - [如何开展优化工作](https://github.com/LvKang-insist/Android-day-issues/issues/22)
-- [性能优化相关](https://github.com/LvKang-insist/Android-day-issues/issues/38)
-
-
+- [Anr 治理](https://github.com/LvKang-insist/Android-day-issues/issues/46)
+- [Crash 治理](https://github.com/LvKang-insist/Android-day-issues/issues/47)
+- [内存泄漏治理](https://github.com/LvKang-insist/Android-day-issues/issues/48)
+- [绘制优化](https://github.com/LvKang-insist/Android-day-issues/issues/49)
 ### Kotlin 部分
 
 
